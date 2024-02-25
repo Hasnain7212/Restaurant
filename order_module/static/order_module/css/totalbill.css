@@ -1,0 +1,102 @@
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-bill {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.total-bill h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.total-bill {
+    flex: 3;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.item-bill-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.item-name {
+    flex: 2;
+    font-weight: bold;
+}
+
+.item-quantity {
+    flex: 1;
+    text-align: center;
+}
+
+.item-amount {
+    flex: 1;
+    text-align: right;
+}
+
+.bill-amount {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.bill-details {
+    margin-top: 30px;
+}
+
+.remove-item {
+    background-color: #ff5733; 
+    color: #ffffff; 
+    border: none; 
+    padding: 5px 10px;
+    margin: 2px; 
+    cursor: pointer; 
+}
+
+.remove-item:hover {
+    background-color: #e6dfdd; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-button, .confirm-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    /* Additional styles... */
+}
+
+.save-button {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.confirm-button {
+    background-color: #f44336;
+    color: #fff;
+}

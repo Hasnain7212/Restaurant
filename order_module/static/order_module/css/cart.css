@@ -1,0 +1,101 @@
+/* Add your custom styles here */
+.order-summary {
+    max-width: 800px;
+    /* Increased max-width for a wider layout */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Added a subtle shadow for depth */
+}
+
+.bill-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bill-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.bill-header p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.order-items {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.order-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.item-details {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.total-amount {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.payment-options label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.card-details input,
+.card-details button {
+    width: calc(100% - 22px);
+    /* Adjusted input width for better alignment */
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-details button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-details button:hover {
+    background-color: #45a049;
+}
+
+/* Add your custom styles here */
+/* (Previous CSS remains the same) */
+
+.checkout-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    /* Blue color for checkout button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}

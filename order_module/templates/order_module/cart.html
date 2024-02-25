@@ -1,0 +1,32 @@
+{% extends 'order_module/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="order">
+  <div class="bill-header">
+    <h2>You Order Is {{ status }} </h2>
+    <h3>Address : {{ address }} </h3>
+  </div>
+
+  <div class="order-items">
+    {% for item_data in item_data %}
+    <div class="order-item">
+      <div class="item-details">
+        <p>Item Name: {{ item_data.item_name }}</p>
+        <p>Description: {{ item_data.item_description }}</p>
+        <p>Price: {{ item_data.item_price }}</p>
+        <p>Quantity: {{ item_data.quantity_No }}</p>
+        <p>Total: {{ item_data.total }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="total-amount">
+    <p>Total Amount:<b> {{ total_amount }} </b></p>
+  </div>
+
+</div>
+{% endblock %}

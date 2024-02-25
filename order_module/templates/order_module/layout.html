@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'order_module/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'order_module/css/menucard.css' %}">
+    <link rel="stylesheet" href="{% static 'order_module/css/menublock.css' %}">
+    <link rel="stylesheet" href="{% static 'order_module/css/totalbill.css' %}">
+    <script src="{% static 'order_module/js/category.js' %}"></script>
+    <script src="{% static 'order_module/js/totalbill.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'order_module/css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'order_module/css/cart.css' %}">
+
+
+
+</head>
+<body>
+    <header>
+        {% block header %}
+
+        {% endblock %}
+        {% block navbar %}
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="{% url 'menu' %}">Kings Restaurant</a></li>
+                <li class="nav-item"><a href="{% url 'menu' %}">Online On Your Finger Tips</a></li>
+                <li class="nav-item"><a href="{% url 'menu' %}"> 9328060689 </a></li>
+                <li class="nav-item">
+                    {% if userId %}
+                      <a href="{% url 'orderstatus' userId %}">Check Order</a>
+                    {% else %}
+                      <a href="{% url 'menu' %}">Go to Menu</a>
+                    {% endif %}
+                  </li>
+                              </ul>
+        </nav>
+        {% endblock %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

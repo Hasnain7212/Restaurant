@@ -1,0 +1,77 @@
+{% extends "order_module/layout.html" %}
+{% load static %}
+
+{% block content %}
+<h2>Hello {{ userId }}</h2>
+<div class="order-container">
+    <div class="menu-container">
+        <div class="container">
+            <div class="menu-card">
+                <nav>
+                    <ul>
+                        <li><a class="category-btn" data-category="appetizers">Appetizers</a></li>
+                        <li><a class="category-btn" data-category="salads">Salads</a></li>
+                        <li><a class="category-btn" data-category="main_courses">Main Courses</a></li>
+                        <li><a class="category-btn" data-category="desserts">Desserts</a></li>
+                        <li><a class="category-btn" data-category="drinks">Drinks</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="menu-list">
+                <ul class="category" id="appetizers">
+                    <!-- Appetizers List Goes Here -->
+                </ul>
+                <ul class="category" id="salads">
+                    <!-- Salads List Goes Here -->
+                </ul>
+                <ul class="category" id="main_courses">
+                    <!-- Main Courses List Goes Here -->
+                </ul>
+                <ul class="category" id="desserts">
+                    <!-- Desserts List Goes Here -->
+                </ul>
+                <ul class="category" id="drinks">
+                    <!-- Drinks List Goes Here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="total-bill">
+        <h2>Total Bill</h2>
+        <span class="bill-amount">$0.00</span>
+        <div class="bill-details"></div>
+        <div class="button-container">
+            <form action="{% url 'saveCart' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="userPhone" id="userPhone" value="{{ userId }}">
+                <input type="hidden" name="cart_item" id="cart_item">
+                <input type="text" name="address" id="card-details" placeholder="Deliver Adderss">
+                <div class="payment-options">
+                    <h3>Payment Options</h3>
+                    <label>
+                      <input type="radio" name="payment" value="card" id="payWithCard">
+                      Pay with Card
+                    </label>
+                    <label>
+                      <input type="radio" name="payment" value="cash" id="payWithCash">
+                      Cash on Delivery
+                    </label>
+                  </div>
+                <button type="submit" class="save-button">Confirm Order & Payment Option Checkout </button>
+            </form>
+        </div>
+        
+      
+          <form class="card-details" style="display:none;">
+            <h3>Card Details</h3>
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number"><br>
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="text" id="expiry_date" name="expiry_date"><br>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv"><br>
+          </form>
+    </div>
+    
+</div>
+{% endblock %}

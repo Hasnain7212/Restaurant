@@ -1,0 +1,49 @@
+/* Style the navbar */
+.navbar {
+  background-color: #1E1E1E; /* Dark background color */
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Style the navbar list */
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style each navbar item */
+.nav-item {
+  margin: 0 20px;
+  transition: transform 0.2s; /* Add a hover effect */
+}
+
+/* Hover effect for navbar items */
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+/* Style the anchor tags (links) */
+.nav-item a {
+  text-decoration: none;
+  color: #FFFFFF; /* White text color */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Style the logo separately, assuming it's an image */
+.nav-item .navbar-brand img {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+/* Add a different background color to the logo */
+.nav-item .navbar-brand img {
+  background-color: #D32F2F; /* Red background for the logo */
+  border-radius: 50%; /* Create a circular shape */
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,99 @@
+Sure. Here is a possible interface for a restaurant menu card:
+
+**Header:**
+
+* Restaurant logo
+* Restaurant name
+* Address
+* Phone number
+* Website
+
+**Menu:**
+
+* Categories (e.g., appetizers, salads, main courses, desserts, drinks)
+* Items within each category (e.g., Caesar salad, grilled chicken breast, chocolate lava cake)
+* Prices
+* Descriptions
+
+**Footer:**
+
+* Social media links
+* Hours of operation
+* Location map
+
+The interface should be visually appealing and easy to navigate. The menu should be organized in a logical way, and the descriptions should be clear and concise. Customers should be able to easily find the items they are looking for and order their food with just a few clicks.
+
+Here are some additional features that could be included in the interface:
+
+* **Search bar:** This would allow customers to search for specific items on the menu.
+* **Filters:** This would allow customers to filter the menu by category, price, dietary restrictions, etc.
+* **Reviews:** This would allow customers to read and write reviews of the food and the restaurant.
+* **Photos:** This would allow customers to see photos of the food and the restaurant.
+* **Ordering system:** This would allow customers to order their food directly from the interface.
+
+The interface should be designed to be mobile-friendly, so that customers can easily access it from their smartphones and tablets.
+
+
+
+
+
+
+
+
+
+def get_menu_items(request,category):
+    menu_items = MenuItem.objects.filter(categorys__name=category)
+    data = [
+        {
+            'name': item.name,
+            'description': item.description,
+            'price': str(item.price),
+            'category': item.category.name,
+            'quantity': item.quantity.name,
+            'veg_non_veg': item.veg_non_veg.name
+        }
+        for item in menu_items
+    ]
+    return JsonResponse({'menu_items': data})
+
+
+
+function updateFrontend(menuItems) {
+        const menuList = document.querySelector('.menu-list');
+        menuList.innerHTML = '';
+
+        menuItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('menu-item');
+
+            listItem.innerHTML = `
+                <form class="item-form">
+                <div class="item-photo">
+                <img src="/images/margherita_pizza.jpg" alt="Margherita Pizza">
+                </div>
+                    <div class="item-info">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                    </div>
+                    <div class="item-controls">
+                        <span class="item-price">$${item.price}</span>
+                        <select class="quantity-select">
+                            ${item.quantities.map(quantity => `<option value="${quantity}">${quantity}</option>`).join('')}
+                        </select>
+                        <div class="quantity-controls">
+                            <button type="button" class="decrease-quantity">-</button>
+                            <span class="quantity">1</span>
+                            <button type="button" class="increase-quantity">+</button>
+                        </div>
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </div>
+                </form>
+            `;
+
+
+
+<form action="{% url 'confirmOrder' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="item_id" value="{{ cart_item.id }}">
+                <button type="submit" class="confirm-button">Confirm Order</button>
+            </form>
